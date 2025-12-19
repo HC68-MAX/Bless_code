@@ -43,9 +43,10 @@ int main(void)
     clock_init(SYSTEM_CLOCK_250M); 	// 时钟配置及系统初始化<务必保留>
     debug_init();                       // 调试串口信息初始化
     // 此处编写用户代码 例如外设初始化代码等
-    pit_ms_init(PIT_NUM, 10);                                                  // 初始化 CCU6_0_CH0 为周期中断 1000ms 周期
+    pit_ms_init(PIT_NUM, 10);                                                  // 初始化 CCU6_0_CH0 为周期中断 10ms 周期
     encoder_init();
     motor_init();
+    key_init();
   while(true)
     {
         // 此处编写需要循环执行的代码
