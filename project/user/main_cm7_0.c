@@ -45,6 +45,7 @@ int main(void)
     // 此处编写用户代码 例如外设初始化代码等
     pit_ms_init(PIT_NUM, 10);                                                  // 初始化 CCU6_0_CH0 为周期中断 1000ms 周期
     encoder_init();
+    motor_init();
   while(true)
     {
         // 此处编写需要循环执行的代码
