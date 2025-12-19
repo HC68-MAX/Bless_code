@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.40.1.364/W64 for ARM                  20/Dec/2025  01:09:37
+# IAR ELF Linker V9.40.1.364/W64 for ARM                  20/Dec/2025  01:19:44
 # Copyright 2007-2023 IAR Systems AB.
 #
 #    Output file  =
@@ -192,7 +192,7 @@ No sections matched the following patterns:
   .intvec            ro code  0x1008'0000    0x80  startup_cm7.o [31]
                             - 0x1008'0080    0x80
 
-"P1":                                      0x6b39
+"P1":                                      0x6b49
   .text              ro code  0x1008'0080   0xeae  xprintffull_nomb.o [50]
   .text              ro code  0x1008'0f2e    0x7e  lz77_init_single.o [52]
   .text              ro code  0x1008'0fac    0x16  strchr.o [52]
@@ -255,81 +255,77 @@ No sections matched the following patterns:
   .text              ro code  0x1008'60b4   0x198  cy_interrupt_map.o [23]
   .text              ro code  0x1008'624c    0xca  key.o [5]
   .text              ro code  0x1008'6318    0xb0  startup_cm7.o [31]
-  .rodata            const    0x1008'63c8    0x78  system_tviibh4m_cm7.o [22]
-  .rodata            const    0x1008'6440    0x74  cy_sysclk.o [33]
-  .rodata            const    0x1008'64b4    0x74  cy_sysclk.o [33]
-  .text              ro code  0x1008'6528    0x70  main_cm7_0.o [45]
-  .text              ro code  0x1008'6598    0x1c  zf_common_clock.o [46]
-  .text              ro code  0x1008'65b4    0x28  printf.o [50]
-  .rodata            const    0x1008'65dc    0x64  zf_common_fifo.o [46]
-  .rodata            const    0x1008'6640    0x64  zf_driver_pwm.o [49]
-  .rodata            const    0x1008'66a4    0x64  zf_driver_uart.o [49]
-  .text              ro code  0x1008'6708    0x38  zero_init3.o [52]
-  .text              ro code  0x1008'6740    0x28  data_init.o [52]
-  .text              ro code  0x1008'6768    0x22  fpinit_M.o [51]
-  .iar.init_table    const    0x1008'678c    0x20  - Linker created -
-  .rodata            const    0x1008'67ac    0x20  main_cm7_0.o [45]
-  .text              ro code  0x1008'67cc    0x20  startup_cm7.o [31]
-  .text              ro code  0x1008'67ec    0x20  putchar.o [50]
-  .text              ro code  0x1008'6810    0x1e  cy_syslib_iar.o [36]
-  .text              ro code  0x1008'6830    0x1e  cmain.o [52]
-  .text              ro code  0x1008'6850     0x4  startup_cm7.o [31]
-  .text              ro code  0x1008'6854     0x4  exit.o [50]
-  .text              ro code  0x1008'6858     0xa  cexit.o [52]
-  .rodata            const    0x1008'6864    0x1c  zf_common_debug.o [46]
-  .text              ro code  0x1008'6880    0x1c  startup_cm7.o [31]
-  .text              ro code  0x1008'689c    0x1c  cstartup_M.o [52]
-  .rodata            const    0x1008'68b8    0x18  startup.o [31]
-  .rodata            const    0x1008'68d0    0x18  system_tviibh4m_cm7.o [22]
-  .rodata            const    0x1008'68e8    0x18  zf_common_debug.o [46]
-  .text              ro code  0x1008'6900    0x16  xprout.o [50]
-  .rodata            const    0x1008'6918    0x10  zf_common_debug.o [46]
+  .text              ro code  0x1008'63c8    0x80  main_cm7_0.o [45]
+  .text              ro code  0x1008'6448    0x1c  zf_common_clock.o [46]
+  .text              ro code  0x1008'6464    0x28  printf.o [50]
+  .rodata            const    0x1008'648c    0x78  system_tviibh4m_cm7.o [22]
+  .rodata            const    0x1008'6504    0x74  cy_sysclk.o [33]
+  .rodata            const    0x1008'6578    0x74  cy_sysclk.o [33]
+  .rodata            const    0x1008'65ec    0x64  zf_common_fifo.o [46]
+  .rodata            const    0x1008'6650    0x64  zf_driver_pwm.o [49]
+  .rodata            const    0x1008'66b4    0x64  zf_driver_uart.o [49]
+  .text              ro code  0x1008'6718    0x38  zero_init3.o [52]
+  .text              ro code  0x1008'6750    0x28  data_init.o [52]
+  .text              ro code  0x1008'6778    0x22  fpinit_M.o [51]
+  .iar.init_table    const    0x1008'679c    0x20  - Linker created -
+  .rodata            const    0x1008'67bc    0x20  main_cm7_0.o [45]
+  .text              ro code  0x1008'67dc    0x20  startup_cm7.o [31]
+  .text              ro code  0x1008'67fc    0x20  putchar.o [50]
+  .text              ro code  0x1008'6820    0x1e  cy_syslib_iar.o [36]
+  .text              ro code  0x1008'6840    0x1e  cmain.o [52]
+  .text              ro code  0x1008'6860     0x4  startup_cm7.o [31]
+  .text              ro code  0x1008'6864     0x4  exit.o [50]
+  .text              ro code  0x1008'6868     0xa  cexit.o [52]
+  .rodata            const    0x1008'6874    0x1c  zf_common_debug.o [46]
+  .text              ro code  0x1008'6890    0x1c  startup_cm7.o [31]
+  .text              ro code  0x1008'68ac    0x1c  cstartup_M.o [52]
+  .rodata            const    0x1008'68c8    0x18  startup.o [31]
+  .rodata            const    0x1008'68e0    0x18  system_tviibh4m_cm7.o [22]
+  .rodata            const    0x1008'68f8    0x18  zf_common_debug.o [46]
+  .text              ro code  0x1008'6910    0x16  xprout.o [50]
   .rodata            const    0x1008'6928    0x10  zf_common_debug.o [46]
-  .rodata            const    0x1008'6938     0xc  zf_common_debug.o [46]
-  .rodata            const    0x1008'6944     0xc  zf_common_debug.o [46]
-  .text              ro code  0x1008'6950     0xc  cy_syslib.o [36]
-  .rodata            const    0x1008'695c     0x8  cy_sysclk.o [33]
-  .rodata            const    0x1008'6964     0x4  cy_interrupt_map.o [23]
-  .rodata            const    0x1008'6968     0x4  cy_interrupt_map.o [23]
-  .rodata            const    0x1008'696c     0x4  cy_interrupt_map.o [23]
-  .rodata            const    0x1008'6970     0x4  cy_interrupt_map.o [23]
+  .rodata            const    0x1008'6938    0x10  zf_common_debug.o [46]
+  .rodata            const    0x1008'6948     0xc  zf_common_debug.o [46]
+  .rodata            const    0x1008'6954     0xc  zf_common_debug.o [46]
+  .text              ro code  0x1008'6960     0xc  cy_syslib.o [36]
+  .rodata            const    0x1008'696c     0x8  cy_sysclk.o [33]
   .rodata            const    0x1008'6974     0x4  cy_interrupt_map.o [23]
   .rodata            const    0x1008'6978     0x4  cy_interrupt_map.o [23]
   .rodata            const    0x1008'697c     0x4  cy_interrupt_map.o [23]
   .rodata            const    0x1008'6980     0x4  cy_interrupt_map.o [23]
-  .rodata            const    0x1008'6984     0x4  cy_scb_uart.o [24]
-  .rodata            const    0x1008'6988     0x4  cy_scb_uart.o [24]
-  .rodata            const    0x1008'698c     0x4  cy_scb_uart.o [24]
-  .rodata            const    0x1008'6990     0x4  cy_scb_uart.o [24]
+  .rodata            const    0x1008'6984     0x4  cy_interrupt_map.o [23]
+  .rodata            const    0x1008'6988     0x4  cy_interrupt_map.o [23]
+  .rodata            const    0x1008'698c     0x4  cy_interrupt_map.o [23]
+  .rodata            const    0x1008'6990     0x4  cy_interrupt_map.o [23]
   .rodata            const    0x1008'6994     0x4  cy_scb_uart.o [24]
   .rodata            const    0x1008'6998     0x4  cy_scb_uart.o [24]
   .rodata            const    0x1008'699c     0x4  cy_scb_uart.o [24]
   .rodata            const    0x1008'69a0     0x4  cy_scb_uart.o [24]
   .rodata            const    0x1008'69a4     0x4  cy_scb_uart.o [24]
   .rodata            const    0x1008'69a8     0x4  cy_scb_uart.o [24]
-  .rodata            const    0x1008'69ac     0x4  cy_sysint.o [35]
-  .rodata            const    0x1008'69b0     0x4  cy_sysint.o [35]
-  .rodata            const    0x1008'69b4     0x4  cy_tcpwm_counter.o [43]
-  .rodata            const    0x1008'69b8     0x4  cy_tcpwm_counter.o [43]
-  .rodata            const    0x1008'69bc     0x4  cy_tcpwm_counter.o [43]
-  .rodata            const    0x1008'69c0     0x4  cy_tcpwm_counter.o [43]
+  .rodata            const    0x1008'69ac     0x4  cy_scb_uart.o [24]
+  .rodata            const    0x1008'69b0     0x4  cy_scb_uart.o [24]
+  .rodata            const    0x1008'69b4     0x4  cy_scb_uart.o [24]
+  .rodata            const    0x1008'69b8     0x4  cy_scb_uart.o [24]
+  .rodata            const    0x1008'69bc     0x4  cy_sysint.o [35]
+  .rodata            const    0x1008'69c0     0x4  cy_sysint.o [35]
   .rodata            const    0x1008'69c4     0x4  cy_tcpwm_counter.o [43]
-  .rodata            const    0x1008'69c8     0x4  cy_tcpwm_pwm.o [43]
-  .rodata            const    0x1008'69cc     0x4  cy_tcpwm_pwm.o [43]
-  .rodata            const    0x1008'69d0     0x4  cy_tcpwm_pwm.o [43]
-  .rodata            const    0x1008'69d4     0x4  cy_tcpwm_pwm.o [43]
+  .rodata            const    0x1008'69c8     0x4  cy_tcpwm_counter.o [43]
+  .rodata            const    0x1008'69cc     0x4  cy_tcpwm_counter.o [43]
+  .rodata            const    0x1008'69d0     0x4  cy_tcpwm_counter.o [43]
+  .rodata            const    0x1008'69d4     0x4  cy_tcpwm_counter.o [43]
   .rodata            const    0x1008'69d8     0x4  cy_tcpwm_pwm.o [43]
   .rodata            const    0x1008'69dc     0x4  cy_tcpwm_pwm.o [43]
   .rodata            const    0x1008'69e0     0x4  cy_tcpwm_pwm.o [43]
-  .rodata            const    0x1008'69e4     0x4  cy_tcpwm_quaddec.o [43]
-  .rodata            const    0x1008'69e8     0x4  cy_tcpwm_quaddec.o [43]
-  .rodata            const    0x1008'69ec     0x4  cy_tcpwm_quaddec.o [43]
-  .rodata            const    0x1008'69f0     0x4  cy_tcpwm_quaddec.o [43]
+  .rodata            const    0x1008'69e4     0x4  cy_tcpwm_pwm.o [43]
+  .rodata            const    0x1008'69e8     0x4  cy_tcpwm_pwm.o [43]
+  .rodata            const    0x1008'69ec     0x4  cy_tcpwm_pwm.o [43]
+  .rodata            const    0x1008'69f0     0x4  cy_tcpwm_pwm.o [43]
   .rodata            const    0x1008'69f4     0x4  cy_tcpwm_quaddec.o [43]
-  .text              ro code  0x1008'69f8     0x4  startup_cm7.o [31]
-  .text              ro code  0x1008'69fc     0x4  startup_cm7.o [31]
-  .text              ro code  0x1008'6a00     0x4  startup_cm7.o [31]
-  .text              ro code  0x1008'6a04     0x4  startup_cm7.o [31]
+  .rodata            const    0x1008'69f8     0x4  cy_tcpwm_quaddec.o [43]
+  .rodata            const    0x1008'69fc     0x4  cy_tcpwm_quaddec.o [43]
+  .rodata            const    0x1008'6a00     0x4  cy_tcpwm_quaddec.o [43]
+  .rodata            const    0x1008'6a04     0x4  cy_tcpwm_quaddec.o [43]
   .text              ro code  0x1008'6a08     0x4  startup_cm7.o [31]
   .text              ro code  0x1008'6a0c     0x4  startup_cm7.o [31]
   .text              ro code  0x1008'6a10     0x4  startup_cm7.o [31]
@@ -341,11 +337,15 @@ No sections matched the following patterns:
   .text              ro code  0x1008'6a28     0x4  startup_cm7.o [31]
   .text              ro code  0x1008'6a2c     0x4  startup_cm7.o [31]
   .text              ro code  0x1008'6a30     0x4  startup_cm7.o [31]
-  .text              ro code  0x1008'6a34     0x2  zf_device_type.o [48]
-  .rodata            const    0x1008'6a36     0x0  zero_init3.o [52]
-  .rodata            const    0x1008'6a36     0x0  lz77_init_single.o [52]
-  Initializer bytes  const    0x1008'6a36    0xb8  <for P2-1>
-                            - 0x1008'6aee  0x6a6e
+  .text              ro code  0x1008'6a34     0x4  startup_cm7.o [31]
+  .text              ro code  0x1008'6a38     0x4  startup_cm7.o [31]
+  .text              ro code  0x1008'6a3c     0x4  startup_cm7.o [31]
+  .text              ro code  0x1008'6a40     0x4  startup_cm7.o [31]
+  .text              ro code  0x1008'6a44     0x2  zf_device_type.o [48]
+  .rodata            const    0x1008'6a46     0x0  zero_init3.o [52]
+  .rodata            const    0x1008'6a46     0x0  lz77_init_single.o [52]
+  Initializer bytes  const    0x1008'6a46    0xb8  <for P2-1>
+                            - 0x1008'6afe  0x6a7e
 
 "P2", part 1 of 3:                          0x7ec
   P2-1                        0x2802'0000   0x7ec  <Init block>
@@ -420,7 +420,7 @@ Unused ranges:
 
          From           To       Size
          ----           --       ----
-  0x1008'6bb9  0x1027'ffff  0x1f'9447
+  0x1008'6bc9  0x1027'ffff  0x1f'9437
   0x2802'0e2c  0x2802'0e7f       0x54
   0x2802'0f00  0x2807'dfff   0x5'd100
 
@@ -437,7 +437,7 @@ Zero (__iar_zero_init3)
 
 Copy/lz77 (__iar_lz77_init_single3)
     1 source range, total size 0xb8 (9% of destination):
-          0x1008'6a36   0xb8
+          0x1008'6a46   0xb8
     1 destination range, total size 0x7ec:
           0x2802'0000  0x7ec
 
@@ -649,9 +649,9 @@ D:\CYT4BB7_Library-master\Seekfree_CYT4BB_Opensource_Library\project\iar\Debug_m
 
 D:\CYT4BB7_Library-master\Seekfree_CYT4BB_Opensource_Library\project\iar\Debug_m7_0\Obj\user_8514941877209965082.dir: [45]
     cm7_0_isr.o                524
-    main_cm7_0.o               112       32
+    main_cm7_0.o               128       32
     ------------------------------------------------
-    Total:                     636       32
+    Total:                     652       32
 
 D:\CYT4BB7_Library-master\Seekfree_CYT4BB_Opensource_Library\project\iar\Debug_m7_0\Obj\zf_common_1201165462030747823.dir: [46]
     zf_common_clock.o           28                 4
@@ -741,7 +741,7 @@ shb_l.a: [53]
     Gaps                        38        6
     Linker created                       32    8'192
 ----------------------------------------------------
-    Grand Total:            26'156    1'218   11'947
+    Grand Total:            26'172    1'218   11'947
 
 
 *******************************************************************************
@@ -750,20 +750,20 @@ shb_l.a: [53]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
-.iar.init_table$$Base   0x1008'678c          --   Gb  - Linker created -
-.iar.init_table$$Limit  0x1008'67ac          --   Gb  - Linker created -
-?main                   0x1008'6831         Code  Gb  cmain.o [52]
-BusFault_Handler        0x1008'6a01         Code  Wk  startup_cm7.o [31]
+.iar.init_table$$Base   0x1008'679c          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x1008'67bc          --   Gb  - Linker created -
+?main                   0x1008'6841         Code  Gb  cmain.o [52]
+BusFault_Handler        0x1008'6a11         Code  Wk  startup_cm7.o [31]
 CSTACK$$Base            0x2807'e000          --   Gb  - Linker created -
 CSTACK$$Limit           0x2808'0000          --   Gb  - Linker created -
 CopyVectorTable         0x1008'5ef1   0x34  Code  Lc  startup.o [31]
 CpuUserInt0_Handler     0x1008'60d3   0x26  Code  Gb  cy_interrupt_map.o [23]
-CpuUserInt10_Handler    0x1008'6a1d         Code  Wk  startup_cm7.o [31]
-CpuUserInt11_Handler    0x1008'6a21         Code  Wk  startup_cm7.o [31]
-CpuUserInt12_Handler    0x1008'6a25         Code  Wk  startup_cm7.o [31]
-CpuUserInt13_Handler    0x1008'6a29         Code  Wk  startup_cm7.o [31]
-CpuUserInt14_Handler    0x1008'6a2d         Code  Wk  startup_cm7.o [31]
-CpuUserInt15_Handler    0x1008'6a31         Code  Wk  startup_cm7.o [31]
+CpuUserInt10_Handler    0x1008'6a2d         Code  Wk  startup_cm7.o [31]
+CpuUserInt11_Handler    0x1008'6a31         Code  Wk  startup_cm7.o [31]
+CpuUserInt12_Handler    0x1008'6a35         Code  Wk  startup_cm7.o [31]
+CpuUserInt13_Handler    0x1008'6a39         Code  Wk  startup_cm7.o [31]
+CpuUserInt14_Handler    0x1008'6a3d         Code  Wk  startup_cm7.o [31]
+CpuUserInt15_Handler    0x1008'6a41         Code  Wk  startup_cm7.o [31]
 CpuUserInt1_Handler     0x1008'60f9   0x26  Code  Gb  cy_interrupt_map.o [23]
 CpuUserInt2_Handler     0x1008'611f   0x26  Code  Gb  cy_interrupt_map.o [23]
 CpuUserInt3_Handler     0x1008'6145   0x26  Code  Gb  cy_interrupt_map.o [23]
@@ -771,8 +771,8 @@ CpuUserInt4_Handler     0x1008'616b   0x26  Code  Gb  cy_interrupt_map.o [23]
 CpuUserInt5_Handler     0x1008'6191   0x26  Code  Gb  cy_interrupt_map.o [23]
 CpuUserInt6_Handler     0x1008'61b7   0x26  Code  Gb  cy_interrupt_map.o [23]
 CpuUserInt7_Handler     0x1008'61dd   0x26  Code  Gb  cy_interrupt_map.o [23]
-CpuUserInt8_Handler     0x1008'6a15         Code  Wk  startup_cm7.o [31]
-CpuUserInt9_Handler     0x1008'6a19         Code  Wk  startup_cm7.o [31]
+CpuUserInt8_Handler     0x1008'6a25         Code  Wk  startup_cm7.o [31]
+CpuUserInt9_Handler     0x1008'6a29         Code  Wk  startup_cm7.o [31]
 Cy_DefaultUserHandler   0x1008'60d1    0x2  Code  Gb  cy_interrupt_map.o [23]
 Cy_GPIO_ClearInterrupt  0x1008'2963    0xe  Code  Lc  cy_gpio.o [14]
 Cy_GPIO_Clr             0x1008'4dad    0xa  Code  Lc  zf_driver_gpio.o [49]
@@ -931,16 +931,16 @@ Cy_SysInt_SetSystemIrqVector
                         0x1008'3d77   0x12  Code  Gb  cy_sysint.o [35]
 Cy_SysInt_SystemIrqUserTableRamPointer
                         0x2802'06ec    0x4  Data  Gb  cy_interrupt_map.o [23]
-Cy_SysLib_DelayCycles   0x1008'6811         Code  Gb  cy_syslib_iar.o [36]
+Cy_SysLib_DelayCycles   0x1008'6821         Code  Gb  cy_syslib_iar.o [36]
 Cy_SysLib_EnterCriticalSection
-                        0x1008'6821         Code  Gb  cy_syslib_iar.o [36]
+                        0x1008'6831         Code  Gb  cy_syslib_iar.o [36]
 Cy_SysLib_ExitCriticalSection
-                        0x1008'6829         Code  Gb  cy_syslib_iar.o [36]
+                        0x1008'6839         Code  Gb  cy_syslib_iar.o [36]
 Cy_SysLib_FaultHandler  0x1008'4735   0x90  Code  Gb  cy_syslib.o [36]
 Cy_SysLib_Halt          0x1008'4731    0x4  Code  Gb  cy_syslib.o [36]
 Cy_SysLib_ProcessingFault
                         0x1008'47d9    0x2  Code  Wk  cy_syslib.o [36]
-Cy_SysLib_SvcHandler    0x1008'6951    0xc  Code  Wk  cy_syslib.o [36]
+Cy_SysLib_SvcHandler    0x1008'6961    0xc  Code  Wk  cy_syslib.o [36]
 Cy_SystemInitFpuEnable  0x1008'6045   0x1e  Code  Gb  system_tviibh4m_cm7.o [22]
 Cy_SystemIrqUserTable   0x2802'0000  0x6ec  Data  Gb  cy_interrupt_map.o [23]
 Cy_Tcpwm_Counter_ClearTC_Intr
@@ -972,30 +972,30 @@ Cy_u32StartupStackEndAddress
                         0x1008'63c4         Data  Gb  startup_cm7.o [31]
 Cy_u32StartupStackStartAddress
                         0x1008'63c0         Data  Gb  startup_cm7.o [31]
-DebugMon_Handler        0x1008'6a09         Code  Wk  startup_cm7.o [31]
+DebugMon_Handler        0x1008'6a19         Code  Wk  startup_cm7.o [31]
 HEAP_STACK$$Base        0x2807'e000          --   Gb  - Linker created -
 HEAP_STACK$$Limit       0x2808'0000          --   Gb  - Linker created -
-HardFault_Handler       0x1008'67cd         Code  Wk  startup_cm7.o [31]
+HardFault_Handler       0x1008'67dd         Code  Wk  startup_cm7.o [31]
 InitRamEcc              0x1008'5ddf  0x100  Code  Lc  startup.o [31]
 InitRamEccClearArea     0x1008'5edf   0x12  Code  Lc  startup.o [31]
-MemManage_Handler       0x1008'69fd         Code  Wk  startup_cm7.o [31]
-NMI_Handler             0x1008'69f9         Code  Wk  startup_cm7.o [31]
+MemManage_Handler       0x1008'6a0d         Code  Wk  startup_cm7.o [31]
+NMI_Handler             0x1008'6a09         Code  Wk  startup_cm7.o [31]
 PID_Motor               0x1008'5b5d  0x154  Code  Gb  pid.o [5]
-PendSV_Handler          0x1008'6a0d         Code  Wk  startup_cm7.o [31]
-Region$$Table$$Base     0x1008'678c          --   Gb  - Linker created -
-Region$$Table$$Limit    0x1008'67ac          --   Gb  - Linker created -
+PendSV_Handler          0x1008'6a1d         Code  Wk  startup_cm7.o [31]
+Region$$Table$$Base     0x1008'679c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x1008'67bc          --   Gb  - Linker created -
 Reset_Handler           0x1008'6319         Code  Wk  startup_cm7.o [31]
-SVC_Handler             0x1008'6881         Code  Wk  startup_cm7.o [31]
+SVC_Handler             0x1008'6891         Code  Wk  startup_cm7.o [31]
 Startup_Init            0x1008'5d51   0x8e  Code  Gb  startup.o [31]
-SysTick_Handler         0x1008'6a11         Code  Wk  startup_cm7.o [31]
+SysTick_Handler         0x1008'6a21         Code  Wk  startup_cm7.o [31]
 SystemCoreClock         0x2802'0df8    0x4  Data  Gb  system_tviibh4m_cm7.o [22]
 SystemCoreClockUpdate   0x1008'5fb1   0x94  Code  Gb  system_tviibh4m_cm7.o [22]
 SystemInit              0x1008'5f55   0x5c  Code  Gb  system_tviibh4m_cm7.o [22]
-UsageFault_Handler      0x1008'6a05         Code  Wk  startup_cm7.o [31]
+UsageFault_Handler      0x1008'6a15         Code  Wk  startup_cm7.o [31]
 _LC                     0x1008'0081    0x6  Code  Lc  xprintffull_nomb.o [50]
 _LitobFullNoMb          0x1008'0d4d  0x114  Code  Lc  xprintffull_nomb.o [50]
 _PrintfFullNoMb         0x1008'0087  0xc98  Code  Gb  xprintffull_nomb.o [50]
-_Prout                  0x1008'6901   0x16  Code  Gb  xprout.o [50]
+_Prout                  0x1008'6911   0x16  Code  Gb  xprout.o [50]
 _PutcharsFullNoMb       0x1008'0eb9   0x2e  Code  Lc  xprintffull_nomb.o [50]
 _SProut                 0x1008'0fc3    0xa  Code  Gb  xsprout.o [50]
 __NVIC_ClearPendingIRQ  0x1008'60b5   0x1c  Code  Lc  cy_interrupt_map.o [23]
@@ -1021,7 +1021,7 @@ __aeabi_memcpy8         0x1008'10bd         Code  Gb  ABImemcpy.o [52]
 __aeabi_memset          0x1008'2829         Code  Gb  ABImemset.o [52]
 __aeabi_ui2d            0x1008'136f    0xe  Code  Gb  U32ToDbl.o [51]
 __aeabi_uldivmod        0x1008'1391         Code  Gb  I64DivMod.o [52]
-__cmain                 0x1008'6831         Code  Gb  cmain.o [52]
+__cmain                 0x1008'6841         Code  Gb  cmain.o [52]
 __ecc_init_dtcm_end_address {Abs}
                         0x2000'3fff         Data  Gb  <internal module>
 __ecc_init_dtcm_start_address {Abs}
@@ -1042,14 +1042,14 @@ __iar_Memset4_word      0x1008'3da5         Code  Gb  ABImemset48.o [52]
 __iar_Memset8_word      0x1008'3da5         Code  Gb  ABImemset48.o [52]
 __iar_Memset_word       0x1008'2831         Code  Gb  ABImemset.o [52]
 __iar_Strchr            0x1008'0fad         Code  Gb  strchr.o [52]
-__iar_data_init3        0x1008'6741   0x28  Code  Gb  data_init.o [52]
+__iar_data_init3        0x1008'6751   0x28  Code  Gb  data_init.o [52]
 __iar_frexp             0x1008'1151         Code  Gb  frexp.o [51]
 __iar_frexpl            0x1008'1151         Code  Gb  frexp.o [51]
-__iar_init_vfp          0x1008'6769         Code  Gb  fpinit_M.o [51]
+__iar_init_vfp          0x1008'6779         Code  Gb  fpinit_M.o [51]
 __iar_ldexp64           0x1008'1231         Code  Gb  ldexp.o [51]
 __iar_lz77_init_single3
                         0x1008'0f2f   0x7e  Code  Gb  lz77_init_single.o [52]
-__iar_program_start     0x1008'689d         Code  Gb  cstartup_M.o [52]
+__iar_program_start     0x1008'68ad         Code  Gb  cstartup_M.o [52]
 __iar_scalbln64         0x1008'1231         Code  Gb  ldexp.o [51]
 __iar_scalbn64          0x1008'1231         Code  Gb  ldexp.o [51]
 __iar_softfp___iar_frexp64
@@ -1068,20 +1068,20 @@ __iar_softfp_scalbln    0x1008'121d         Code  Gb  ldexp.o [51]
 __iar_softfp_scalblnl   0x1008'121d         Code  Gb  ldexp.o [51]
 __iar_softfp_scalbn     0x1008'121d         Code  Gb  ldexp.o [51]
 __iar_softfp_scalbnl    0x1008'121d         Code  Gb  ldexp.o [51]
-__iar_zero_init3        0x1008'6709   0x38  Code  Gb  zero_init3.o [52]
-__low_level_init        0x1008'6851         Code  Gb  startup_cm7.o [31]
+__iar_zero_init3        0x1008'6719   0x38  Code  Gb  zero_init3.o [52]
+__low_level_init        0x1008'6861         Code  Gb  startup_cm7.o [31]
 __ramVectors            0x2802'0e80         Data  Gb  startup_cm7.o [31]
 __vector_table          0x1008'0000         Data  Gb  startup_cm7.o [31]
 __vector_table_0x1c     0x1008'001c         Data  Gb  startup_cm7.o [31]
 __write                 0x1008'2717   0x12  Code  Gb  zf_common_debug.o [46]
-_call_main              0x1008'683d         Code  Gb  cmain.o [52]
-_exit                   0x1008'6859         Code  Gb  cexit.o [52]
+_call_main              0x1008'684d         Code  Gb  cmain.o [52]
+_exit                   0x1008'6869         Code  Gb  cexit.o [52]
 abort                   0x1008'15c1    0x6  Code  Gb  abort.o [50]
 adc_convert             0x1008'5cb1   0x6c  Code  Gb  zf_driver_adc.o [49]
 adc_resolution          0x2802'0cf4   0x48  Data  Lc  zf_driver_adc.o [49]
 assert_interrupt_config
                         0x1008'398d    0xc  Code  Gb  zf_common_interrupt.o [46]
-clock_init              0x1008'6599   0x16  Code  Gb  zf_common_clock.o [46]
+clock_init              0x1008'6449   0x16  Code  Gb  zf_common_clock.o [46]
 cy_assertFileName       0x2802'0d94   0x18  Data  Gb  cy_syslib.o [36]
 cy_assertLine           0x2802'0df0    0x4  Data  Gb  cy_syslib.o [36]
 cy_delay32kMs           0x2802'0e08    0x4  Data  Gb  system_tviibh4m_cm7.o [22]
@@ -1107,7 +1107,7 @@ debug_uart_data         0x2802'0e22    0x1  Data  Gb  zf_common_debug.o [46]
 debug_uart_fifo         0x2802'0dac   0x18  Data  Gb  zf_common_debug.o [46]
 debug_uart_str_output   0x1008'242f    0xc  Code  Lc  zf_common_debug.o [46]
 delay_clk               0x2802'07e8    0x2  Data  Lc  zf_driver_delay.o [49]
-divNumLocator           0x1008'695c    0x8  Data  Gb  cy_sysclk.o [33]
+divNumLocator           0x1008'696c    0x8  Data  Gb  cy_sysclk.o [33]
 encoder_clear_count     0x1008'4a43   0x2e  Code  Gb  zf_driver_encoder.o [49]
 encoder_clk             0x2802'076c    0x8  Data  Gb  zf_driver_encoder.o [49]
 encoder_data_dir        0x2802'0df4    0x4  Data  Gb  encoder.o [5]
@@ -1117,7 +1117,7 @@ encoder_mode            0x2802'0e14    0x4  Data  Lc  zf_driver_encoder.o [49]
 encoder_module          0x2802'0774   0x10  Data  Gb  zf_driver_encoder.o [49]
 encoder_quad_get_count  0x1008'5879   0x24  Code  Gb  encoder.o [5]
 encoder_quad_init       0x1008'4a71  0x15a  Code  Gb  zf_driver_encoder.o [49]
-exit                    0x1008'6855    0x4  Code  Gb  exit.o [50]
+exit                    0x1008'6865    0x4  Code  Gb  exit.o [50]
 fifo_clear              0x1008'34e5   0x74  Code  Gb  zf_common_fifo.o [46]
 fifo_end_offset         0x1008'34cb   0x1a  Code  Lc  zf_common_fifo.o [46]
 fifo_head_offset        0x1008'34b1   0x1a  Code  Lc  zf_common_fifo.o [46]
@@ -1162,7 +1162,7 @@ key_gpio_init           0x1008'624d   0x34  Code  Gb  key.o [5]
 key_scan                0x1008'6281   0x96  Code  Gb  key.o [5]
 ldexp                   0x1008'1231         Code  Gb  ldexp.o [51]
 ldexpl                  0x1008'1231         Code  Gb  ldexp.o [51]
-main                    0x1008'6529   0x70  Code  Gb  main_cm7_0.o [45]
+main                    0x1008'63c9   0x80  Code  Gb  main_cm7_0.o [45]
 memchr                  0x1008'1045         Code  Gb  memchr.o [52]
 motor_init              0x1008'5929   0x34  Code  Gb  motor.o [5]
 motor_set_speed         0x1008'595d   0x70  Code  Gb  motor.o [5]
@@ -1186,8 +1186,8 @@ pit0_ch2_isr            0x1008'5691    0xa  Code  Gb  cm7_0_isr.o [45]
 pit_init                0x1008'51cd  0x1ee  Code  Gb  zf_driver_pit.o [49]
 pit_isr_flag_clear      0x1008'51a3   0x2a  Code  Gb  zf_driver_pit.o [49]
 pit_isr_func            0x2802'0784   0x3c  Data  Gb  zf_driver_pit.o [49]
-printf                  0x1008'65b5   0x28  Code  Gb  printf.o [50]
-putchar                 0x1008'67ed   0x20  Code  Gb  putchar.o [50]
+printf                  0x1008'6465   0x28  Code  Gb  printf.o [50]
+putchar                 0x1008'67fd   0x20  Code  Gb  putchar.o [50]
 pwm_all_channel_close   0x1008'2191   0x1a  Code  Gb  zf_driver_pwm.o [49]
 pwm_calculate           0x1008'58a1   0x72  Code  Gb  motor.o [5]
 pwm_init                0x1008'2205  0x1e4  Code  Gb  zf_driver_pwm.o [49]
@@ -1214,7 +1214,7 @@ tsl1401_collect_pit_handler
 tsl1401_data            0x2802'07ec  0x200  Data  Gb  zf_device_tsl1401.o [48]
 tsl1401_finish_flag     0x2802'0e2a    0x1  Data  Gb  zf_device_tsl1401.o [48]
 tsl1401_init_state      0x2802'0e29    0x1  Data  Lc  zf_device_tsl1401.o [48]
-type_default_callback   0x1008'6a35    0x2  Code  Lc  zf_device_type.o [48]
+type_default_callback   0x1008'6a45    0x2  Code  Lc  zf_device_type.o [48]
 uart0_isr               0x1008'5717   0x40  Code  Gb  cm7_0_isr.o [45]
 uart1_isr               0x1008'5757   0x42  Code  Gb  cm7_0_isr.o [45]
 uart2_isr               0x1008'5799   0x40  Code  Gb  cm7_0_isr.o [45]
@@ -1291,7 +1291,7 @@ zf_debug_init_flag      0x2802'0e21    0x1  Data  Lc  zf_common_debug.o [46]
 [53] = shb_l.a
 [54] = zf_device_config.a
 
-  26'156 bytes of readonly  code memory
+  26'172 bytes of readonly  code memory
    1'218 bytes of readonly  data memory
   11'947 bytes of readwrite data memory
 
