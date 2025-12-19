@@ -76,58 +76,37 @@
 // **************************** 代码区域 ****************************
 
 
-#define ENCODER_QUADDEC1                (TC_CH58_ENCODER)                       // 带方向编码器对应使用的编码器接口       
-#define ENCODER_QUADDEC_A1              (TC_CH58_ENCODER_CH1_P17_3)             // A 对应的引脚                      
-#define ENCODER_QUADDEC_B1              (TC_CH58_ENCODER_CH2_P17_4)             // B 对应的引脚                     
-
-#define ENCODER_QUADDEC2                (TC_CH27_ENCODER)                       // 带方向编码器对应使用的编码器接口   
-#define ENCODER_QUADDEC_A2              (TC_CH27_ENCODER_CH1_P19_2)             // A 对应的引脚                  
-#define ENCODER_QUADDEC_B2              (TC_CH27_ENCODER_CH2_P19_3)             // B 对应的引脚                       
-
-#define ENCODER_QUADDEC3                (TC_CH07_ENCODER)                       // 带方向编码器对应使用的编码器接口  
-#define ENCODER_QUADDEC_A3              (TC_CH07_ENCODER_CH1_P07_6)             // A 对应的引脚                 
-#define ENCODER_QUADDEC_B3              (TC_CH07_ENCODER_CH2_P07_7)             // B 对应的引脚                       
-
-#define ENCODER_QUADDEC4                (TC_CH20_ENCODER)                       // 带方向编码器对应使用的编码器接口
-#define ENCODER_QUADDEC_A4              (TC_CH20_ENCODER_CH1_P08_1)             // A 对应的引脚
-#define ENCODER_QUADDEC_B4              (TC_CH20_ENCODER_CH2_P08_2)             // B 对应的引脚
-
-int16 encoder_data_dir[4] = {0};
-
 int main(void)
 {
     clock_init(SYSTEM_CLOCK_250M); 	// 时钟配置及系统初始化<务必保留>
     debug_info_init();                       // 调试串口信息初始化
-    // 此处编写用户代码 例如外设初始化代码等
-
-
-    encoder_quad_init(ENCODER_QUADDEC1, ENCODER_QUADDEC_A1, ENCODER_QUADDEC_B1);// 初始化编码器模块与引脚 带正交编码器模式
-    encoder_quad_init(ENCODER_QUADDEC2, ENCODER_QUADDEC_A2, ENCODER_QUADDEC_B2);// 初始化编码器模块与引脚 带正交编码器模式
-    encoder_quad_init(ENCODER_QUADDEC3, ENCODER_QUADDEC_A3, ENCODER_QUADDEC_B3);// 初始化编码器模块与引脚 带正交编码器模式
-    encoder_quad_init(ENCODER_QUADDEC4, ENCODER_QUADDEC_A4, ENCODER_QUADDEC_B4);// 初始化编码器模块与引脚 带正交编码器模式
-
-
+    
+    ips114_init();
+    ips114_show_string(0, 0, "mt9v03x init.");
+    while(1)
+    {
+        if(mt9v03x_init())
+            ips114_show_string(0, 16, "mt9v03x reinit.");
+        else
+            break;
+        system_delay_ms(500);                                                   // 短延时快速闪灯表示异常
+    }
+    ips114_show_string(0, 16, "init success.");
+    
+    
     // 此处编写用户代码 例如外设初始化代码等
     while(true)
     {
         // 此处编写需要循环执行的代码
-        system_delay_ms(100);
-        
-        encoder_data_dir[0] = encoder_get_count(ENCODER_QUADDEC1);
-        encoder_clear_count(ENCODER_QUADDEC1);
-        encoder_data_dir[1] = encoder_get_count(ENCODER_QUADDEC2);
-        encoder_clear_count(ENCODER_QUADDEC2);
-        encoder_data_dir[2] = encoder_get_count(ENCODER_QUADDEC3);
-        encoder_clear_count(ENCODER_QUADDEC3);
-        encoder_data_dir[3] = encoder_get_count(ENCODER_QUADDEC4);
-        encoder_clear_count(ENCODER_QUADDEC4);
-        
-        printf("ENCODER_DIR_1 counter \t\t%d .\r\n", encoder_data_dir[0]);      // 输出编码器计数信息
-        printf("ENCODER_DIR_2 counter \t\t%d .\r\n", encoder_data_dir[1]);      // 输出编码器计数信息
-        printf("ENCODER_DIR_3 counter \t\t%d .\r\n", encoder_data_dir[2]);      // 输出编码器计数信息
-        printf("ENCODER_DIR_4 counter \t\t%d .\r\n", encoder_data_dir[3]);      // 输出编码器计数信息
 
-        
+        if(mt9v03x_finish_flag)
+        {
+            ips114_displayimage03x((const uint8 *)mt9v03x_image, MT9V03X_W, MT9V03X_H);                             // 显示原始图像
+//            ips114_show_gray_image(0, 0, (const uint8 *)mt9v03x_image, MT9V03X_W, MT9V03X_H, 240, 135, 64);       // 显示灰度图像
+            mt9v03x_finish_flag = 0;
+        }
+      
+      
         // 此处编写需要循环执行的代码
     }
 }

@@ -34,46 +34,8 @@
 ********************************************************************************************************************/
 
 #include "zf_common_headfile.h"
-// 打开新的工程或者工程移动了位置务必执行以下操作
-// 第一步 关闭上面所有打开的文件
-// 第二步 project->clean  等待下方进度条走完
 
-// *************************** 例程硬件连接说明 ***************************
-// 接入总钻风灰度数字摄像头 对应主板摄像头接口 请注意线序
-//      模块管脚            单片机管脚
-//      SCL                 查看 zf_device_mt9v03x.h 中 MT9V03X_COF_UART_TX 宏定义 默认 P17_1 总钻风 SCL 引脚 要接在单片机对应的 GPIO 上
-//      SDA                 查看 zf_device_mt9v03x.h 中 MT9V03X_COF_UART_RX 宏定义 默认 P17_2 总钻风 SDA 引脚 要接在单片机对应的 GPIO 上
-//      D0                  查看 zf_device_mt9v03x.h 中 MT9V03X_D0_PIN      宏定义 默认 P18_0
-//      D1                  查看 zf_device_mt9v03x.h 中 MT9V03X_D1_PIN      宏定义 默认 P18_1
-//      D2                  查看 zf_device_mt9v03x.h 中 MT9V03X_D2_PIN      宏定义 默认 P18_2
-//      D3                  查看 zf_device_mt9v03x.h 中 MT9V03X_D3_PIN      宏定义 默认 P18_3
-//      D4                  查看 zf_device_mt9v03x.h 中 MT9V03X_D4_PIN      宏定义 默认 P18_4
-//      D5                  查看 zf_device_mt9v03x.h 中 MT9V03X_D5_PIN      宏定义 默认 P18_5
-//      D6                  查看 zf_device_mt9v03x.h 中 MT9V03X_D6_PIN      宏定义 默认 P18_6
-//      D7                  查看 zf_device_mt9v03x.h 中 MT9V03X_D7_PIN      宏定义 默认 P18_7
-//      PCLK                查看 zf_device_mt9v03x.h 中 MT9V03X_PCLK_PIN    宏定义 默认 P06_5
-//      VSYNC               查看 zf_device_mt9v03x.h 中 MT9V03X_VSY_PIN     宏定义 默认 P06_6
-// 接入1.14寸IPS模块
-//      模块管脚            单片机管脚
-//      SCL                 查看 zf_device_ips114.h 中 IPS114_SCL_PIN 宏定义 默认 P15_3
-//      SDA                 查看 zf_device_ips114.h 中 IPS114_SDA_PIN 宏定义 默认 P15_5
-//      RES                 查看 zf_device_ips114.h 中 IPS114_RST_PIN 宏定义 默认 P15_1
-//      DC                  查看 zf_device_ips114.h 中 IPS114_DC_PIN  宏定义 默认 P15_0
-//      CS                  查看 zf_device_ips114.h 中 IPS114_CS_PIN  宏定义 默认 P15_2
-//      BL                  查看 zf_device_ips114.h 中 IPS114_BLK_PIN 宏定义 默认 P15_4
-//      GND                 核心板电源地 GND
-//      3V3                 核心板 3V3 电源
-
-
-
-// *************************** 例程测试说明 ***************************
-// 1.核心板烧录完成本例程 将核心板插在主板上 插到底
-// 2.摄像头接在主板的摄像头接口 注意线序1.14寸IPS模块插入主板屏幕接口
-// 3.主板上电 或者核心板链接完毕后上电 核心板按下复位按键
-// 4.屏幕会显示初始化信息然后显示摄像头图像
-// 如果发现现象与说明严重不符 请参照本文件最下方 例程常见问题说明 进行排查
-
-// **************************** 代码区域 ****************************
+#define PIT_NUM                 (PIT_CH0 )                                     // 使用的周期中断编号
 
 
 int main(void)
@@ -81,33 +43,17 @@ int main(void)
     clock_init(SYSTEM_CLOCK_250M); 	// 时钟配置及系统初始化<务必保留>
     debug_init();                       // 调试串口信息初始化
     // 此处编写用户代码 例如外设初始化代码等
-    
-    ips114_init();
-    ips114_show_string(0, 0, "mt9v03x init.");
-    while(1)
-    {
-        if(mt9v03x_init())
-            ips114_show_string(0, 16, "mt9v03x reinit.");
-        else
-            break;
-        system_delay_ms(500);                                                   // 短延时快速闪灯表示异常
-    }
-    ips114_show_string(0, 16, "init success.");
-    
-    
-    // 此处编写用户代码 例如外设初始化代码等
-    while(true)
+    pit_ms_init(PIT_NUM, 10);                                                  // 初始化 CCU6_0_CH0 为周期中断 1000ms 周期
+    encoder_init();
+  while(true)
     {
         // 此处编写需要循环执行的代码
+        system_delay_ms(10);
+    
+        printf("ENCODER_DIR_3 counter \t\t%d .\r\n", encoder_data_dir[0]);      // 输出编码器计数信息
+        printf("ENCODER_DIR_4 counter \t\t%d .\r\n", encoder_data_dir[1]);      // 输出编码器计数信息
 
-        if(mt9v03x_finish_flag)
-        {
-            ips114_displayimage03x((const uint8 *)mt9v03x_image, MT9V03X_W, MT9V03X_H);                             // 显示原始图像
-//            ips114_show_gray_image(0, 0, (const uint8 *)mt9v03x_image, MT9V03X_W, MT9V03X_H, 240, 135, 64);       // 显示灰度图像
-            mt9v03x_finish_flag = 0;
-        }
-      
-      
+        
         // 此处编写需要循环执行的代码
     }
 }
