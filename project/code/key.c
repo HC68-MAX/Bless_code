@@ -1,5 +1,5 @@
 #include "key.h"
-void key_init(void)
+void key_gpio_init(void)
 {
     gpio_init(KEY1, GPI, GPIO_HIGH, GPI_PULL_UP);                                // 按键1 初始化为输入 上拉
     gpio_init(KEY2, GPI, GPIO_HIGH, GPI_PULL_UP);                                // 按键2 初始化为输入 上拉

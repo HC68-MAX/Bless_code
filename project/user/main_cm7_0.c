@@ -46,17 +46,31 @@ int main(void)
     pit_ms_init(PIT_NUM, 10);                                                  // 初始化 CCU6_0_CH0 为周期中断 10ms 周期
     encoder_init();
     motor_init();
-    key_init();
+    key_gpio_init();
   while(true)
     {
+        switch (key_scan())
+        {
+        case 1:
+            motor_set_speed(20, 20);
+            break;
+        case 2:
+            motor_set_speed(-20, 20);
+            break;
+        case 3:
+            motor_set_speed(20, -20);
+            break;
+        case 4:
+            motor_set_speed(-20, -20);
+            break;  
+        default:
+            break;
+        }
         // 此处编写需要循环执行的代码
         system_delay_ms(10);
-    
-        printf("ENCODER_DIR_3 counter \t\t%d .\r\n", encoder_data_dir[0]);      // 输出编码器计数信息
-        printf("ENCODER_DIR_4 counter \t\t%d .\r\n", encoder_data_dir[1]);      // 输出编码器计数信息
-
         
-        // 此处编写需要循环执行的代码
+        
+      // 此处编写需要循环执行的代码
     }
 }
 
