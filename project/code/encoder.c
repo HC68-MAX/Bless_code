@@ -9,8 +9,8 @@ void encoder_init(void)
 }
 void encoder_quad_get_count(void)
 {
-    encoder_data_dir[0] = -encoder_get_count(ENCODER_QUADDEC3);
-    encoder_clear_count(ENCODER_QUADDEC3);
-    encoder_data_dir[1] = encoder_get_count(ENCODER_QUADDEC4);
+    encoder_data_dir[0] = encoder_get_count(ENCODER_QUADDEC4); // 获取左编码器计数值
     encoder_clear_count(ENCODER_QUADDEC4);
-}
+    encoder_data_dir[1] = -encoder_get_count(ENCODER_QUADDEC3); // 获取右编码器计数值
+    encoder_clear_count(ENCODER_QUADDEC3);
+} 

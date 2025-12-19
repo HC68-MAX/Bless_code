@@ -44,6 +44,7 @@
 #include "encoder.h"
 #include "motor.h"
 #include "key.h"
+#include "pid.h"
 //===================================================Ð¾Æ¬ SDK µ×²ã===================================================
 #include "cy_project.h"
 #include "cy_device_headers.h"

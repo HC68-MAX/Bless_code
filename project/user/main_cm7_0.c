@@ -35,41 +35,33 @@
 
 #include "zf_common_headfile.h"
 
-#define PIT_NUM                 (PIT_CH0 )                                     // 使用的周期中断编号
-
+#define PIT_Encoder                 (PIT_CH0 )                                     // 使用的周期中断编号
+#define PIT_Motor                   (PIT_CH1 )                                     // 使用的周期中断编号
 
 int main(void)
 {
     clock_init(SYSTEM_CLOCK_250M); 	// 时钟配置及系统初始化<务必保留>
     debug_init();                       // 调试串口信息初始化
-    // 此处编写用户代码 例如外设初始化代码等
-    pit_ms_init(PIT_NUM, 10);                                                  // 初始化 CCU6_0_CH0 为周期中断 10ms 周期
+    // 此处编写用户代码 例如外设初始化代码等 
+    pit_ms_init(PIT_Encoder, 10);                                  
+    pit_ms_init(PIT_Motor,   10);    
     encoder_init();
     motor_init();
     key_gpio_init();
   while(true)
     {
-        switch (key_scan())
-        {
-        case 1:
-            motor_set_speed(20, 20);
-            break;
-        case 2:
-            motor_set_speed(-20, 20);
-            break;
-        case 3:
-            motor_set_speed(20, -20);
-            break;
+       switch (key_scan())
+       {
         case 4:
-            motor_set_speed(-20, -20);
-            break;  
-        default:
-            break;
-        }
+        goal_speed_r=200;
+        break;
+        case 3:
+        goal_speed_r=100;
+        break;
+       }
+       printf("left speed:%d  right speed:%d\r\n",encoder_data_dir[1],encoder_data_dir[0]);
         // 此处编写需要循环执行的代码
         system_delay_ms(10);
-        
-        
       // 此处编写需要循环执行的代码
     }
 }
