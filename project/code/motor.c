@@ -1,10 +1,14 @@
 #include "motor.h"
 int16 goal_speed_l = 0;          //左电机目标速度
 int16 goal_speed_r = 0;          //右电机目标速度
+int16 goal_speed = 80;            //整体目标速度
+float pid_out = 0;               //pid计算后的速度
+float error = 0;                 //差速误差
 void pwm_calculate(void)
 {
-    pid_Speed_l.target_val = goal_speed_l;                               // 设置左电机目标速度
-    pid_Speed_r.target_val = goal_speed_r;                               // 设置右电机目标速度 
+    pid_diff_speed(error);
+    pid_Speed_l.target_val = goal_speed+pid_out;                               // 设置左电机目标速度
+    pid_Speed_r.target_val = goal_speed-pid_out;                               // 设置右电机目标速度 
     PID_Motor(&pid_Speed_r, (float)encoder_data_dir[0]);                 // 调用左电机PID控制函数
     PID_Motor(&pid_Speed_l, (float)encoder_data_dir[1]);                 // 调用右电机PID控制函数
 

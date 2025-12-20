@@ -57,9 +57,17 @@ int main(void)
         // 此处编写需要循环执行的代码
       system_delay_ms(10);
         // 此处编写需要循环执行的代码
+        switch(key_scan())
+        {
+          case 1:m7_1_data[1]=1;break;
+          case 2:m7_1_data[2]=1;break;
+          case 3:m7_1_data[3]=1;break;
+          case 4:m7_1_data[4]=1;break;
+          default:break;
+        }
       SCB_CleanInvalidateDCache_by_Addr(&m7_1_data, sizeof(m7_1_data));      // M7_0核心有Dcache 当需要读取RAM地址数据时应该更新Dcache的内容 否则可能只是读取到Dcache而不是读取的RAM
-      goal_speed_l=m7_1_data[0];  // 读取M7_1核心传递过来的数据 作为左轮目标速度 单位 mm/s
-      goal_speed_r=m7_1_data[0];  // 
+      error=m7_1_data[0];  // 读取M7_1核心传递过来的数据 作为左轮目标速度 单位 mm/s
+
       
     }
 }

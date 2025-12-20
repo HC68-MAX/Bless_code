@@ -6,6 +6,10 @@
  */
 #include "pid.h"
 #include "zf_common_typedef.h"
+// 位置式PID参数
+#define KP  0.4f   // 比例系数，根据实际调试调整
+#define KI  0.0f   // 积分系数，简单场景可先设0
+#define KD  0.2f   // 微分系数，抑制震荡
 
 // 初始化左右电机PID参数（根据实际调试调整）
 _pid pid_Speed_l = {
@@ -57,4 +61,20 @@ void PID_Motor(_pid *p, float NowPlace)
     // 6. 更新误差历史（供下一周期使用）
     p->err_previous = p->err_last;  // e(k-2) = e(k-1)
     p->err_last = p->err;           // e(k-1) = e(k)
+}
+
+// 全局变量：保存历史偏差
+float last_error = 0.0f;
+float integral = 0.0f;
+/**
+ * 差速控制函数
+ * @param error: 当前偏差值（左轮速度 - 右轮速度）
+ */
+void pid_diff_speed(float error)
+{
+    // 1. 计算位置式PID输出（转向修正量）
+    integral += error;                // 积分项
+    float derivative = error - last_error; // 微分项
+    pid_out = KP * error + KI * integral + KD * derivative;
+    last_error = error;
 }

@@ -12,5 +12,7 @@ void motor_set_speed(int16 speed1, int16 speed2);
 
 extern int16 goal_speed_l;
 extern int16 goal_speed_r;
-
+extern int16 goal_speed;
+extern float pid_out;
+extern float error;
 #endif

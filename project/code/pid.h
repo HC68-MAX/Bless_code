@@ -36,5 +36,5 @@ typedef struct
 
 extern _pid pid_Speed_r, pid_Speed_l;
 extern void PID_Motor(_pid *p, float NowPlace);  // 电机PID控制函数
-
+extern void pid_diff_speed(float error); // 差速控制函数
 #endif
