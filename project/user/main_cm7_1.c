@@ -21,7 +21,7 @@
 * 许可证副本在 libraries 文件夹下 即该文件夹下的 LICENSE 文件
 * 欢迎各位使用并传播本程序 但修改内容时必须保留逐飞科技的版权声明（即本声明）
 *
-* 文件名称          main_cm7_0
+* 文件名称          main_cm7_1
 * 公司名称          成都逐飞科技有限公司
 * 版本信息          查看 libraries/doc 文件夹内 version 文件 版本说明
 * 开发环境          IAR 9.40.1
@@ -34,11 +34,14 @@
 ********************************************************************************************************************/
 
 #include "zf_common_headfile.h"
-
+#define DATA_LENGTH               (20)                                           // 数组数据长度
+#pragma location = 0x28001000                                                   // 将下面这个数组定义到指定的RAM地址，便于其他核心直接访问(开源库默认在 0x28001000 地址保留了8kb的空间用于数据交互)                                                                               // 此处为0x28001014的原因是前面放了一个M0的数组
+float m7_1_data[DATA_LENGTH] = {0};                                             // 定义 M7_1 演示数据数组 浮点数类型
+ 
 int main(void)
 {
     clock_init(SYSTEM_CLOCK_250M); 	// 时钟配置及系统初始化<务必保留>
-    debug_info_init();                       // 调试串口信息初始化
+    debug_info_init();                  // 调试串口信息初始化
     
     ips114_init();
     ips114_show_string(0, 0, "mt9v03x init.");
@@ -48,24 +51,19 @@ int main(void)
             ips114_show_string(0, 16, "mt9v03x reinit.");
         else
             break;
-        system_delay_ms(500);                                                   // 短延时快速闪灯表示异常
+        system_delay_ms(500);                                                   
     }
     ips114_show_string(0, 16, "init success.");
     
-    
-    // 此处编写用户代码 例如外设初始化代码等
     while(true)
     {
-        // 此处编写需要循环执行的代码
-
         if(mt9v03x_finish_flag)
         {  
             image_process(100);
             ips114_displayimage03x((const uint8 *)black_image, MT9V03X_W, MT9V03X_H);
             mt9v03x_finish_flag = 0;
-        }
-      
-      
-        // 此处编写需要循环执行的代码
+            m7_1_data[0] += 1;  // 演示数据变化
+            SCB_CleanInvalidateDCache_by_Addr(&m7_1_data, sizeof(m7_1_data));   
+    }
     }
 }

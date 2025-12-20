@@ -1,48 +1,51 @@
 /*********************************************************************************************************************
-* CYT4BB Opensourec Library å³ï¼ˆ CYT4BB å¼€æºåº“ï¼‰æ˜¯ä¸€ä¸ªåŸºäºŽå®˜æ–¹ SDK æŽ¥å£çš„ç¬¬ä¸‰æ–¹å¼€æºåº“
-* Copyright (c) 2022 SEEKFREE é€é£žç§‘æŠ€
+* CYT4BB Opensourec Library ¼´£¨ CYT4BB ¿ªÔ´¿â£©ÊÇÒ»¸ö»ùÓÚ¹Ù·½ SDK ½Ó¿ÚµÄµÚÈý·½¿ªÔ´¿â
+* Copyright (c) 2022 SEEKFREE Öð·É¿Æ¼¼
 *
-* æœ¬æ–‡ä»¶æ˜¯ CYT4BB å¼€æºåº“çš„ä¸€éƒ¨åˆ†
+* ±¾ÎÄ¼þÊÇ CYT4BB ¿ªÔ´¿âµÄÒ»²¿·Ö
 *
-* CYT4BB å¼€æºåº“ æ˜¯å…è´¹è½¯ä»¶
-* æ‚¨å¯ä»¥æ ¹æ®è‡ªç”±è½¯ä»¶åŸºé‡‘ä¼šå‘å¸ƒçš„ GPLï¼ˆGNU General Public Licenseï¼Œå³ GNUé€šç”¨å…¬å…±è®¸å¯è¯ï¼‰çš„æ¡æ¬¾
-* å³ GPL çš„ç¬¬3ç‰ˆï¼ˆå³ GPL3.0ï¼‰æˆ–ï¼ˆæ‚¨é€‰æ‹©çš„ï¼‰ä»»ä½•åŽæ¥çš„ç‰ˆæœ¬ï¼Œé‡æ–°å‘å¸ƒå’Œ/æˆ–ä¿®æ”¹å®ƒ
+* CYT4BB ¿ªÔ´¿â ÊÇÃâ·ÑÈí¼þ
+* Äú¿ÉÒÔ¸ù¾Ý×ÔÓÉÈí¼þ»ù½ð»á·¢²¼µÄ GPL£¨GNU General Public License£¬¼´ GNUÍ¨ÓÃ¹«¹²Ðí¿ÉÖ¤£©µÄÌõ¿î
+* ¼´ GPL µÄµÚ3°æ£¨¼´ GPL3.0£©»ò£¨ÄúÑ¡ÔñµÄ£©ÈÎºÎºóÀ´µÄ°æ±¾£¬ÖØÐÂ·¢²¼ºÍ/»òÐÞ¸ÄËü
 *
-* æœ¬å¼€æºåº“çš„å‘å¸ƒæ˜¯å¸Œæœ›å®ƒèƒ½å‘æŒ¥ä½œç”¨ï¼Œä½†å¹¶æœªå¯¹å…¶ä½œä»»ä½•çš„ä¿è¯
-* ç”šè‡³æ²¡æœ‰éšå«çš„é€‚é”€æ€§æˆ–é€‚åˆç‰¹å®šç”¨é€”çš„ä¿è¯
-* æ›´å¤šç»†èŠ‚è¯·å‚è§ GPL
+* ±¾¿ªÔ´¿âµÄ·¢²¼ÊÇÏ£ÍûËüÄÜ·¢»Ó×÷ÓÃ£¬µ«²¢Î´¶ÔÆä×÷ÈÎºÎµÄ±£Ö¤
+* ÉõÖÁÃ»ÓÐÒþº¬µÄÊÊÏúÐÔ»òÊÊºÏÌØ¶¨ÓÃÍ¾µÄ±£Ö¤
+* ¸ü¶àÏ¸½ÚÇë²Î¼û GPL
 *
-* æ‚¨åº”è¯¥åœ¨æ”¶åˆ°æœ¬å¼€æºåº“çš„åŒæ—¶æ”¶åˆ°ä¸€ä»½ GPL çš„å‰¯æœ¬
-* å¦‚æžœæ²¡æœ‰ï¼Œè¯·å‚é˜…<https://www.gnu.org/licenses/>
+* ÄúÓ¦¸ÃÔÚÊÕµ½±¾¿ªÔ´¿âµÄÍ¬Ê±ÊÕµ½Ò»·Ý GPL µÄ¸±±¾
+* Èç¹ûÃ»ÓÐ£¬Çë²ÎÔÄ<https://www.gnu.org/licenses/>
 *
-* é¢å¤–æ³¨æ˜Žï¼š
-* æœ¬å¼€æºåº“ä½¿ç”¨ GPL3.0 å¼€æºè®¸å¯è¯åè®® ä»¥ä¸Šè®¸å¯ç”³æ˜Žä¸ºè¯‘æ–‡ç‰ˆæœ¬
-* è®¸å¯ç”³æ˜Žè‹±æ–‡ç‰ˆåœ¨ libraries/doc æ–‡ä»¶å¤¹ä¸‹çš„ GPL3_permission_statement.txt æ–‡ä»¶ä¸­
-* è®¸å¯è¯å‰¯æœ¬åœ¨ libraries æ–‡ä»¶å¤¹ä¸‹ å³è¯¥æ–‡ä»¶å¤¹ä¸‹çš„ LICENSE æ–‡ä»¶
-* æ¬¢è¿Žå„ä½ä½¿ç”¨å¹¶ä¼ æ’­æœ¬ç¨‹åº ä½†ä¿®æ”¹å†…å®¹æ—¶å¿…é¡»ä¿ç•™é€é£žç§‘æŠ€çš„ç‰ˆæƒå£°æ˜Žï¼ˆå³æœ¬å£°æ˜Žï¼‰
+* ¶îÍâ×¢Ã÷£º
+* ±¾¿ªÔ´¿âÊ¹ÓÃ GPL3.0 ¿ªÔ´Ðí¿ÉÖ¤Ð­Òé ÒÔÉÏÐí¿ÉÉêÃ÷ÎªÒëÎÄ°æ±¾
+* Ðí¿ÉÉêÃ÷Ó¢ÎÄ°æÔÚ libraries/doc ÎÄ¼þ¼ÐÏÂµÄ GPL3_permission_statement.txt ÎÄ¼þÖÐ
+* Ðí¿ÉÖ¤¸±±¾ÔÚ libraries ÎÄ¼þ¼ÐÏÂ ¼´¸ÃÎÄ¼þ¼ÐÏÂµÄ LICENSE ÎÄ¼þ
+* »¶Ó­¸÷Î»Ê¹ÓÃ²¢´«²¥±¾³ÌÐò µ«ÐÞ¸ÄÄÚÈÝÊ±±ØÐë±£ÁôÖð·É¿Æ¼¼µÄ°æÈ¨ÉùÃ÷£¨¼´±¾ÉùÃ÷£©
 *
-* æ–‡ä»¶åç§°          main_cm7_0
-* å…¬å¸åç§°          æˆéƒ½é€é£žç§‘æŠ€æœ‰é™å…¬å¸
-* ç‰ˆæœ¬ä¿¡æ¯          æŸ¥çœ‹ libraries/doc æ–‡ä»¶å¤¹å†… version æ–‡ä»¶ ç‰ˆæœ¬è¯´æ˜Ž
-* å¼€å‘çŽ¯å¢ƒ          IAR 9.40.1
-* é€‚ç”¨å¹³å°          CYT4BB
-* åº—é“ºé“¾æŽ¥          https://seekfree.taobao.com/
+* ÎÄ¼þÃû³Æ          main_cm7_0
+* ¹«Ë¾Ãû³Æ          ³É¶¼Öð·É¿Æ¼¼ÓÐÏÞ¹«Ë¾
+* °æ±¾ÐÅÏ¢          ²é¿´ libraries/doc ÎÄ¼þ¼ÐÄÚ version ÎÄ¼þ °æ±¾ËµÃ÷
+* ¿ª·¢»·¾³          IAR 9.40.1
+* ÊÊÓÃÆ½Ì¨          CYT4BB
+* µêÆÌÁ´½Ó          https://seekfree.taobao.com/
 *
-* ä¿®æ”¹è®°å½•
-* æ—¥æœŸ              ä½œè€…                å¤‡æ³¨
+* ÐÞ¸Ä¼ÇÂ¼
+* ÈÕÆÚ              ×÷Õß                ±¸×¢
 * 2024-1-4       pudding            first version
 ********************************************************************************************************************/
 
 #include "zf_common_headfile.h"
+#define DATA_LENGTH               (20)                                          // Êý×éÊý¾Ý³¤¶È
+#pragma location = 0x28001000                                                   // ½«ÏÂÃæÕâ¸öÊý×é¶¨Òåµ½Ö¸¶¨µÄRAMµØÖ·£¬#pragmaÐèÒªÊÖ¶¯·ÖÅäµØÖ·£¬Òò´ËÐèÒª¼ÆËãÊý¾Ý³¤¶ÈºóÔÙ·ÖÅä
+float m7_1_data[DATA_LENGTH];                                         // ¶¨ÒåM7_1ÑÝÊ¾Êý¾ÝÊý×é ¸¡µãÊýÀàÐÍ  ÓÉÓÚ¸ÃÊý×éÒÑ¾­ÔÚM7_1ºËÐÄ¸³Öµ¹ý³õÖµ£¬Òò´Ë´Ë´¦²»ÔÙ³õÊ¼»¯
 
-#define PIT_Encoder                 (PIT_CH0 )                                     // ä½¿ç”¨çš„å‘¨æœŸä¸­æ–­ç¼–å·
-#define PIT_Motor                   (PIT_CH1 )                                     // ä½¿ç”¨çš„å‘¨æœŸä¸­æ–­ç¼–å·
+#define PIT_Encoder                 (PIT_CH0 )                                     // Ê¹ÓÃµÄÖÜÆÚÖÐ¶Ï±àºÅ
+#define PIT_Motor                   (PIT_CH1 )                                     // Ê¹ÓÃµÄÖÜÆÚÖÐ¶Ï±àºÅ
 
 int main(void)
 {
-    clock_init(SYSTEM_CLOCK_250M); 	// æ—¶é’Ÿé…ç½®åŠç³»ç»Ÿåˆå§‹åŒ–<åŠ¡å¿…ä¿ç•™>
-    debug_init();                       // è°ƒè¯•ä¸²å£ä¿¡æ¯åˆå§‹åŒ–
-    // æ­¤å¤„ç¼–å†™ç”¨æˆ·ä»£ç  ä¾‹å¦‚å¤–è®¾åˆå§‹åŒ–ä»£ç ç­‰ 
+    clock_init(SYSTEM_CLOCK_250M); 	// Ê±ÖÓÅäÖÃ¼°ÏµÍ³³õÊ¼»¯<Îñ±Ø±£Áô>
+    debug_init();                       // µ÷ÊÔ´®¿ÚÐÅÏ¢³õÊ¼»¯
+    // ´Ë´¦±àÐ´ÓÃ»§´úÂë ÀýÈçÍâÉè³õÊ¼»¯´úÂëµÈ 
     pit_ms_init(PIT_Encoder, 10);                                  
     pit_ms_init(PIT_Motor,   10);    
     encoder_init();
@@ -50,21 +53,13 @@ int main(void)
     key_gpio_init();
   while(true)
     {
-       switch (key_scan())
-       {
-        case 4:
-        goal_speed_r=200;
-        break;
-        case 3:
-        goal_speed_r+=100;
-        break;
-        case 2:
-        goal_speed_r-=0;
-        break;
-       }
-       printf("left speed:%d  right speed:%d\r\n",encoder_data_dir[1],encoder_data_dir[0]);
-        // æ­¤å¤„ç¼–å†™éœ€è¦å¾ªçŽ¯æ‰§è¡Œçš„ä»£ç 
-        system_delay_ms(10);
-      // æ­¤å¤„ç¼–å†™éœ€è¦å¾ªçŽ¯æ‰§è¡Œçš„ä»£ç 
+      printf("%d,%d,%d\n",encoder_data_dir[1],encoder_data_dir[0],goal_speed_l);
+        // ´Ë´¦±àÐ´ÐèÒªÑ­»·Ö´ÐÐµÄ´úÂë
+      system_delay_ms(10);
+        // ´Ë´¦±àÐ´ÐèÒªÑ­»·Ö´ÐÐµÄ´úÂë
+      SCB_CleanInvalidateDCache_by_Addr(&m7_1_data, sizeof(m7_1_data));      // M7_0ºËÐÄÓÐDcache µ±ÐèÒª¶ÁÈ¡RAMµØÖ·Êý¾ÝÊ±Ó¦¸Ã¸üÐÂDcacheµÄÄÚÈÝ ·ñÔò¿ÉÄÜÖ»ÊÇ¶ÁÈ¡µ½Dcache¶ø²»ÊÇ¶ÁÈ¡µÄRAM
+      goal_speed_l=m7_1_data[0];  // ¶ÁÈ¡M7_1ºËÐÄ´«µÝ¹ýÀ´µÄÊý¾Ý ×÷Îª×óÂÖÄ¿±êËÙ¶È µ¥Î» mm/s
+      goal_speed_r=m7_1_data[0];  // 
+      
     }
 }

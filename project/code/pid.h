@@ -12,8 +12,8 @@
 // 通用范围限幅宏（限制x在[min_val, max_val]之间）
 #define LimitRange(x, min_val, max_val)  (x < min_val ? min_val : (x > max_val ? max_val : x))
 
-#define DUTY_MAX          3000  // 电机最大占空比
-#define DUTY_MIN          -3000     // 电机最小占空比
+#define DUTY_MAX           500      // 电机最大占空比
+#define DUTY_MIN          -500      // 电机最小占空比
 
 typedef struct
 {

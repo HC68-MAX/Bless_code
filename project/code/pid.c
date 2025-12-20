@@ -13,7 +13,7 @@ _pid pid_Speed_l = {
     .actual_val = 0,       // 初始输出值
     .integral = 0,         // 初始积分值
     .err = 0, .err_last = 0, .err_previous = 0,
-    .Kp = 0.1, .Ki = 0.1, .Kd = 0,  // PID参数
+    .Kp = 0.02, .Ki = 0.05, .Kd = 0.1,  // PID参数
     .integral_limit = 4000.0        // 积分限幅
 };
 
@@ -22,7 +22,7 @@ _pid pid_Speed_r = {
     .actual_val = 0,
     .integral = 0,
     .err = 0, .err_last = 0, .err_previous = 0,
-    .Kp = 0.1, .Ki = 0.1, .Kd = 0,
+    .Kp = 0.02, .Ki = 0.05, .Kd = 0.1,
     .integral_limit = 4000.0
 };
 
