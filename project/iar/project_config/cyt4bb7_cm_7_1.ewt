@@ -1435,6 +1435,12 @@
             <name>$PROJ_DIR$\..\..\code\image.h</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\code\key.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\code\key.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\code\本文件夹作用.txt</name>
         </file>
     </group>

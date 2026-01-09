@@ -39,12 +39,12 @@
 float m7_1_data[DATA_LENGTH] = {0};                                             // 定义 M7_1 演示数据数组 浮点数类型
 uint8 Key1=0,Key2=0,Key3=0,Key4=0;  //按键变量
 uint8 thres=128; //图像处理阈值
-uint8 num=0;
+uint8 num_img=0;
 int main(void)
 {
     clock_init(SYSTEM_CLOCK_250M); 	// 时钟配置及系统初始化<务必保留>
     debug_info_init();                  // 调试串口信息初始化
-    
+    key_gpio_init();
     ips114_init();
     ips114_show_string(0, 0, "mt9v03x init.");
     while(1)
@@ -59,38 +59,30 @@ int main(void)
     
     while(true)
     {
-       if(Key1==1)
-       {
-        thres+=5;
-        Key1=0;
-       }
-        if(Key2==1)
-        {
-        thres-=5;
-        Key2=0;
+        if(key_1()==1){
+            num_img=1;
         }
-
-
+        if(key_2()==1){
+            num_img=0;
+        }
+        if(key_3()==1){
+            thres-=5;
+        }
+        if(key_4()==1){
+            thres+=5;
+        }
         if(mt9v03x_finish_flag)
         {  
-            image_process(thres);
-        }
-            if( Key3==1)
-            {
-                num=0;
-                Key3=0;
-            }
-            if( Key4==1)
-            {
-                num=1;
-                Key4=0;
-            }
-            if(num==0)
-            ips114_displayimage03x((const uint8 *)mt9v03x_image, MT9V03X_W, MT9V03X_H);
-            else 
-            ips114_displayimage03x((const uint8 *)black_image, MT9V03X_W, MT9V03X_H); 
+          
+            image_process(thres); 
             mt9v03x_finish_flag = 0;
-            //m7_1_data[0] += 1;  // 演示数据变化
+        }
+        if(num_img==1)
+            ips114_displayimage03x((const uint8 *)mt9v03x_image, MT9V03X_W, MT9V03X_H);
+        else
+            ips114_displayimage03x((const uint8 *)black_image, MT9V03X_W, MT9V03X_H); 
+            ips114_show_uint(190, 32, thres, 3); //显示阈值
+            ips114_show_uint(190, 48, num_img, 3); //显示阈值
             float sum=0;
             uint8 num=0;
             for(uint8 i=0;i<120;i++)
@@ -104,10 +96,6 @@ int main(void)
             m7_1_data[0]=sum/num;  // 演示数据变化
             else m7_1_data[0]=0;
             SCB_CleanInvalidateDCache_by_Addr(&m7_1_data, sizeof(m7_1_data)); 
-            Key1=(uint8)m7_1_data[1];
-            Key2=(uint8)m7_1_data[2];
-            Key3=(uint8)m7_1_data[3];
-            Key4=(uint8)m7_1_data[4];
         }
     }
 

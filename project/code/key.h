@@ -8,7 +8,10 @@
 #define KEY4                    (P20_0)
 
 void key_gpio_init(void);
-uint8 key_scan(void);
+uint8 key_1(void);
+uint8 key_2(void); 
+uint8 key_3(void);
+uint8 key_4(void);
 
 
 #endif
